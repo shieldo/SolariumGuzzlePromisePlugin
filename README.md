@@ -24,7 +24,15 @@ $promises = [
     'in_stock' => $plugin->queryAsync($queryInstock),
     'low_price' => $plugin->queryAsync($queryLowprice),
 ];
-$results = GuzzleHttp\Promise\unwrap($promises);
+$results = [];
+GuzzleHttp\Promise\each_limit(
+    $promises,
+    6,
+    function ($value, $idx) use (&$results) {
+        $results[$idx] = $value;
+    }
+);
+var_dump($results);
 
 // option 2: use inbuilt promise execution, with theoretical max of 6 open sockets at one time
 
@@ -32,4 +40,5 @@ $results = $plugin->queryParallel([
     'in_stock' => $queryInstock,
     'low_price' => $queryLowprice,
 ], 6);
+var_dump($results);
 ```

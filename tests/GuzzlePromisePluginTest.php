@@ -21,4 +21,6 @@ class GuzzlePromisePluginTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertInstanceOf(AbstractPlugin::class, $this->plugin);
     }
+
+
 }
