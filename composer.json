@@ -1,0 +1,27 @@
+{
+    "name": "shieldo/solarium-guzzle-promise-plugin",
+    "description": "A package making available a plugin that can fetch Solarium query results as Guzzle plugins, allowing async fetches.",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Shieldo\\GuzzlePromisePlugin\\": [
+                "src",
+                "tests"
+            ]
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.1",
+        "solarium/solarium": "^3.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Douglas Greenshields",
+            "email": "douglas@usemarkup.com"
+        }
+    ]
+}
